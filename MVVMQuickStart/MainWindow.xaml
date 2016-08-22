@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVMQuickStart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="197.245" Width="483.475">
+    <Window.DataContext>
+        <local:SongViewModel/>
+    </Window.DataContext>
+    <Grid Margin="0,0,36,48">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="Example1 "></Label>
+        <Label Grid.Column="0" Grid.Row="1" Content="Artist Name: " ></Label>
+        <Label Grid.Column="0" Grid.Row="2" Content="Song Title : " ></Label>
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding ArtistName}"></Label>
+        <Label Grid.Column="1" Grid.Row="2" Content="{Binding SongeTitle}"></Label>
+        <Button Grid.Column="1" Grid.Row="3" Name="btnUpdateArtist" Content="Update Songe Details" Command="{Binding UpdateSongeDetails}" ></Button>
     </Grid>
 </Window>
